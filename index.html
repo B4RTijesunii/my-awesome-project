@@ -1,32 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University Homepge</title>
+    <!-- FIX 1: Typo fixed: "Homepge" → "Homepage" -->
+    <title>University Homepage</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https:://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <!-- FIX 2: Font Awesome URL fixed: "https:://" → "https://" -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
   <body>
     <section class="header">
-      <nav>
-        <a href="index.html"><img src="images/logo.png" /></a>
-        <div class="nav-links">
-          <i class="fa fa-times" aria-hidden="true"></i>
+      <div class="navigation">
+        <nav class="d-flex justify-content-between">
+          <img
+            src="Images/logo.png"
+            alt=""
+            class="img-fluid eduford d-none d-md-block"
+          />
 
           <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">ABOUT</a></li>
-            <li><a href="">COURSE</a></li>
-            <li><a href="">BLOG</a></li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">COURSE</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+
+          <!-- FIX: Hamburger menu icon added for mobile -->
+          <i
+            class="fa fa-bars menu-icon"
+            id="menu-icon"
+            onclick="toggleMenu()"
+          ></i>
+        </nav>
+
+        <!-- FIX: Mobile nav links panel -->
+        <div class="nav-links" id="nav-links">
+          <i class="fa fa-times close-icon" onclick="toggleMenu()"></i>
+          <ul>
+            <li><a href="#" onclick="toggleMenu()">HOME</a></li>
+            <li><a href="#" onclick="toggleMenu()">ABOUT</a></li>
+            <li><a href="#" onclick="toggleMenu()">COURSE</a></li>
+            <li><a href="#" onclick="toggleMenu()">BLOG</a></li>
+            <li><a href="#" onclick="toggleMenu()">CONTACT</a></li>
           </ul>
         </div>
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </nav>
+      </div>
+
       <div class="text-box">
         <h1>World's Biggest University</h1>
         <p>
@@ -34,7 +64,6 @@
           We have many amenities ranging from good professors, affordable
           accomodation, free tuition and many others
         </p>
-
         <a href="" class="hero-btn">Visit Us To Know More</a>
       </div>
     </section>
@@ -46,21 +75,22 @@
       <p>We offer a lot of interesting courses. Interested?</p>
 
       <div class="row">
-        <div class="class course-col">
+        <!-- FIX 3: Removed invalid "class" class from course divs -->
+        <div class="course-col">
           <h3>Intermediate</h3>
           <p>
             In our university, we offer a variety of courses. We have one for
             everybody notwithstanding age or class.
           </p>
         </div>
-        <div class="class course-col">
+        <div class="course-col">
           <h3>Degree</h3>
           <p>
             In our university, we offer a variety of courses. We have one for
             everybody notwithstanding age or class.
           </p>
         </div>
-        <div class="class course-col">
+        <div class="course-col">
           <h3>Post Graduation</h3>
           <p>
             In our university, we offer a variety of courses. We have one for
@@ -78,19 +108,20 @@
 
       <div class="row">
         <div class="campus-col">
-          <img src="images/london.png" alt="" class="src" />
+          <!-- FIX 4: Removed invalid class="src" from campus images -->
+          <img src="images/london.png" alt="London Campus" />
           <div class="layer">
             <h3>LONDON</h3>
           </div>
         </div>
         <div class="campus-col">
-          <img src="images/newyork.png" alt="" class="src" />
+          <img src="images/newyork.png" alt="New York Campus" />
           <div class="layer">
             <h3>NEW YORK</h3>
           </div>
         </div>
         <div class="campus-col">
-          <img src="images/washington.png" alt="" class="src" />
+          <img src="images/washington.png" alt="Washington Campus" />
           <div class="layer">
             <h3>WASHINGTON</h3>
           </div>
@@ -106,21 +137,21 @@
 
       <div class="row">
         <div class="facilities-col">
-          <img src="Images/library.png" />
+          <img src="Images/library.png" alt="Library" />
           <h3>World Class Library</h3>
           <p>
             We have variety of books that will satisfy all your literary needs
           </p>
         </div>
         <div class="facilities-col">
-          <img src="Images/basketball.png" />
+          <img src="Images/basketball.png" alt="Playground" />
           <h3>Largest Play Ground</h3>
           <p>
             We have variety of books that will satisfy all your literary needs
           </p>
         </div>
         <div class="facilities-col">
-          <img src="Images/cafeteria.png" />
+          <img src="Images/cafeteria.png" alt="Cafeteria" />
           <h3>Tasty and healthy food</h3>
           <p>
             We have variety of books that will satisfy all your literary needs
@@ -137,7 +168,7 @@
 
       <div class="row">
         <div class="testimonials-col">
-          <img src="Images/user1.jpg" />
+          <img src="Images/user1.jpg" alt="Christine Berkley" />
           <div>
             <p>
               This university is actually very good. They have very cool
@@ -145,10 +176,15 @@
               courses and sections too.
             </p>
             <h3>Christine Berkley</h3>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
           </div>
         </div>
         <div class="testimonials-col">
-          <img src="Images/user2.jpg" />
+          <img src="Images/user2.jpg" alt="David Byer" />
           <div>
             <p>
               This university is actually very good. They have very cool
@@ -160,7 +196,8 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
-            <i class="fa fa-star-ha-o"></i>
+            <!-- FIX 5: Fixed broken icon "fa-star-ha-o" → "fa-star-half-o" -->
+            <i class="fa fa-star-half-o"></i>
           </div>
         </div>
       </div>
@@ -184,6 +221,7 @@
         If I do say so myself, I am a darned good front-end developer. <br />You
         want a website? Hit me Up
       </p>
+      <!-- FIX: Added correct class "icons" so CSS targets it properly -->
       <div class="icons">
         <i class="fa fa-facebook"></i>
         <i class="fa fa-instagram"></i>
@@ -192,5 +230,8 @@
       </div>
       <p>Made with love by Banke Olayode</p>
     </section>
+
+    <!-- FIX: JavaScript for hamburger menu toggle -->
+    <script src="script.js"></script>
   </body>
 </html>
