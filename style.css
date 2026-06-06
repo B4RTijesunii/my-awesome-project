@@ -61,7 +61,7 @@ nav ul {
 }
 .hero-btn {
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none !important;
   color: #fff;
   padding: 12px 13px;
   background: transparent;
@@ -124,7 +124,11 @@ nav ul {
   right: 15px;
   cursor: pointer;
 }
-
+.nav-links li a:hover {
+  transition: 1s;
+  background: #f44336 !important;
+  text-decoration: none;
+}
 /* FIX: Overlay when nav is open on mobile */
 .nav-overlay {
   display: none;
@@ -347,7 +351,27 @@ h3 {
   }
 }
 /*--------footer-------*/
+@media (min-width: 701px) {
+  .menu-icon {
+    display: none !important;
+  }
+  .navigation > nav > ul {
+    display: flex !important;
+  }
+}
 
+/* Mobile: hide nav ul, show hamburger */
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 20px;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .navigation > nav > ul {
+    display: none;
+  }
+}
 .footer {
   width: 100%;
   text-align: center;
